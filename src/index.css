@@ -2,39 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* ADmyBRAND AI Suite Design System - Modern SaaS Landing Page
+Inspired by Notion, Vercel, Linear - Professional & Trustworthy
+All colors MUST be HSL for perfect design system consistency.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base Colors - Clean & Professional */
+    --background: 240 20% 99%;
+    --foreground: 240 10% 9%;
 
+    /* Card System - Glassmorphism Ready */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 9%;
 
+    /* Popover & Modal */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand - Deep Professional Blue */
+    --primary: 248 95% 15%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 248 100% 50%;
+    --primary-light: 248 95% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Sophisticated Purple */
+    --secondary: 264 85% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 264 85% 30%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Vibrant Call-to-Action */
+    --accent: 213 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 213 100% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted Tones - Subtle Interface */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
 
+    /* Glass Effects - Modern Transparency */
+    --glass-primary: 248 95% 15% / 0.05;
+    --glass-secondary: 264 85% 20% / 0.05;
+    --glass-white: 0 0% 100% / 0.1;
+    --glass-dark: 240 10% 9% / 0.05;
+
+    /* Gradients - Beautiful Modern Effects */
+    --gradient-hero: linear-gradient(135deg, hsl(248 95% 15%) 0%, hsl(264 85% 20%) 50%, hsl(213 100% 55%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.1) 0%, hsl(240 20% 99% / 0.05) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(248 100% 50% / 0.1) 0%, transparent 70%);
+    --gradient-mesh: conic-gradient(from 0deg at 50% 50%, hsl(248 95% 15% / 0.1), hsl(264 85% 20% / 0.1), hsl(213 100% 55% / 0.1), hsl(248 95% 15% / 0.1));
+
+    /* Shadows - Elegant Depth */
+    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --shadow-card: 0 10px 40px -10px hsl(248 95% 15% / 0.1);
+    --shadow-glow: 0 0 50px hsl(248 100% 50% / 0.2);
+    --shadow-elegant: 0 20px 60px -20px hsl(240 10% 9% / 0.15);
+
+    /* Interactive States */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 6% 90%;
+    --input: 240 6% 94%;
+    --ring: 248 95% 15%;
 
     --radius: 0.5rem;
 
@@ -101,5 +132,77 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-mesh);
+    background-attachment: fixed;
+  }
+
+  /* Glass morphism utilities */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-glass);
+  }
+
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { box-shadow: var(--shadow-card); }
+    to { box-shadow: var(--shadow-glow); }
+  }
+
+  /* Scroll animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Modern scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-light));
   }
 }
