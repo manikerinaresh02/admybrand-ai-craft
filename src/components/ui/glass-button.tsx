@@ -8,12 +8,12 @@ const glassButtonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary text-primary-foreground shadow-card-elegant hover:shadow-glow hover:scale-105 active:scale-95",
-        secondary: "glass-card text-foreground hover:bg-white/20 hover:scale-105 active:scale-95",
-        accent: "bg-accent text-accent-foreground shadow-card-elegant hover:shadow-glow hover:scale-105 active:scale-95",
-        ghost: "hover:bg-accent/10 hover:text-accent-foreground transition-colors duration-300",
-        outline: "border border-input bg-background/50 backdrop-blur-sm hover:bg-accent/10 hover:text-accent-foreground hover:border-accent/50",
-        hero: "bg-gradient-hero text-white shadow-glow hover:shadow-elegant hover:scale-105 active:scale-95 relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-100%] hover:before:animate-shimmer"
+        primary: "bg-gradient-cta text-white shadow-card hover:shadow-glow hover:scale-[1.02] active:scale-[0.98] transition-all duration-200",
+        secondary: "glass-card text-foreground hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200",
+        accent: "bg-accent text-accent-foreground shadow-card hover:shadow-glow hover:scale-[1.02] active:scale-[0.98] transition-all duration-200",
+        ghost: "hover:bg-muted/50 hover:text-foreground transition-all duration-200",
+        outline: "border border-border bg-background hover:bg-muted/30 hover:border-primary/50 transition-all duration-200",
+        hero: "bg-gradient-cta text-white shadow-glow hover:shadow-elegant hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-100%] hover:before:animate-shimmer transition-all duration-200"
       },
       size: {
         sm: "h-9 px-3 text-xs",

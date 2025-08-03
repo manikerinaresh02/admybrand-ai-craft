@@ -9,37 +9,37 @@ All colors MUST be HSL for perfect design system consistency.
 
 @layer base {
   :root {
-    /* Base Colors - Clean & Professional */
-    --background: 240 20% 99%;
-    --foreground: 240 10% 9%;
+    /* Base Colors - Ultra Clean & Minimalist */
+    --background: 0 0% 100%;
+    --foreground: 240 6% 15%;
 
-    /* Card System - Glassmorphism Ready */
+    /* Card System - Pure White */
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 9%;
+    --card-foreground: 240 6% 15%;
 
     /* Popover & Modal */
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 9%;
+    --popover-foreground: 240 6% 15%;
 
-    /* Primary Brand - Deep Professional Blue */
-    --primary: 248 95% 15%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 248 100% 50%;
-    --primary-light: 248 95% 25%;
+    /* Primary Brand - Modern Blue */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 83% 63%;
+    --primary-light: 221 83% 73%;
 
-    /* Secondary - Sophisticated Purple */
-    --secondary: 264 85% 20%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-light: 264 85% 30%;
+    /* Secondary - Elegant Purple */
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 262 83% 68%;
 
-    /* Accent - Vibrant Call-to-Action */
-    --accent: 213 100% 55%;
+    /* Accent - Fresh Green */
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 213 100% 65%;
+    --accent-light: 142 71% 55%;
 
-    /* Muted Tones - Subtle Interface */
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    /* Muted Tones - Light Neutral */
+    --muted: 210 11% 96%;
+    --muted-foreground: 240 5% 64%;
 
     /* Glass Effects - Modern Transparency */
     --glass-primary: 248 95% 15% / 0.05;
@@ -47,17 +47,18 @@ All colors MUST be HSL for perfect design system consistency.
     --glass-white: 0 0% 100% / 0.1;
     --glass-dark: 240 10% 9% / 0.05;
 
-    /* Gradients - Beautiful Modern Effects */
-    --gradient-hero: linear-gradient(135deg, hsl(248 95% 15%) 0%, hsl(264 85% 20%) 50%, hsl(213 100% 55%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.1) 0%, hsl(240 20% 99% / 0.05) 100%);
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(248 100% 50% / 0.1) 0%, transparent 70%);
-    --gradient-mesh: conic-gradient(from 0deg at 50% 50%, hsl(248 95% 15% / 0.1), hsl(264 85% 20% / 0.1), hsl(213 100% 55% / 0.1), hsl(248 95% 15% / 0.1));
+    /* Gradients - Subtle Modern Effects */
+    --gradient-hero: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(262 83% 58%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8) 0%, hsl(210 11% 96% / 0.3) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(221 83% 53% / 0.05) 0%, transparent 70%);
+    --gradient-mesh: radial-gradient(circle at 20% 80%, hsl(221 83% 53% / 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(262 83% 58% / 0.03) 0%, transparent 50%);
 
-    /* Shadows - Elegant Depth */
-    --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-    --shadow-card: 0 10px 40px -10px hsl(248 95% 15% / 0.1);
-    --shadow-glow: 0 0 50px hsl(248 100% 50% / 0.2);
-    --shadow-elegant: 0 20px 60px -20px hsl(240 10% 9% / 0.15);
+    /* Shadows - Soft & Minimal */
+    --shadow-glass: 0 4px 24px 0 hsl(240 6% 15% / 0.04);
+    --shadow-card: 0 2px 12px -2px hsl(240 6% 15% / 0.08);
+    --shadow-glow: 0 8px 32px -8px hsl(221 83% 53% / 0.2);
+    --shadow-elegant: 0 12px 40px -12px hsl(240 6% 15% / 0.12);
 
     /* Interactive States */
     --destructive: 0 84.2% 60.2%;
@@ -134,6 +135,8 @@ All colors MUST be HSL for perfect design system consistency.
     @apply bg-background text-foreground;
     background: var(--gradient-mesh);
     background-attachment: fixed;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
   }
 
   /* Glass morphism utilities */

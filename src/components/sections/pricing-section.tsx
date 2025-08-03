@@ -64,86 +64,86 @@ const pricingPlans = [
 
 export const PricingSection = () => {
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-gradient-hero opacity-10 rounded-full blur-3xl transform -translate-y-1/2" />
+    <section id="pricing" className="py-32 relative overflow-hidden bg-background">
+      {/* Subtle Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/3 via-transparent to-secondary/3" />
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl transform -translate-y-1/2" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10 max-w-7xl">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-4">
-            <Star className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium">Simple Pricing</span>
+        <div className="text-center max-w-4xl mx-auto mb-20 space-y-8">
+          <div className="inline-flex items-center gap-3 glass-card px-6 py-3 rounded-full mb-6">
+            <Star className="w-5 h-5 text-primary" />
+            <span className="text-sm font-medium text-foreground">Simple Pricing</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-heading-md sm:text-heading-lg font-bold text-foreground">
             Choose Your
             <span className="gradient-text block">Perfect Plan</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground">
+          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
             Start free, scale as you grow. No hidden fees, no long-term contracts. 
             Cancel anytime with our 30-day money-back guarantee.
           </p>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <GlassCard
               key={plan.name}
               variant={plan.highlighted ? "glow" : "pricing"}
-              className={`relative animate-fade-in-up ${plan.highlighted ? 'scale-105 border-accent/50' : ''}`}
+              className={`relative animate-fade-in-up transition-all duration-300 hover:shadow-glow hover:scale-[1.02] ${plan.highlighted ? 'scale-[1.05] border-primary/30' : ''}`}
               style={{animationDelay: `${index * 0.1}s`}}
             >
               {/* Popular Badge */}
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-hero text-white px-4 py-1 rounded-full text-sm font-medium">
+                  <div className="bg-gradient-cta text-white px-6 py-2 rounded-full text-sm font-medium shadow-card">
                     {plan.badge}
                   </div>
                 </div>
               )}
 
-              <GlassCardHeader className="text-center">
+              <GlassCardHeader className="text-center pb-8">
                 {/* Icon */}
-                <div className="mx-auto mb-4">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-background/50 to-background/20 border">
-                    <plan.icon className="w-8 h-8 text-accent" />
+                <div className="mx-auto mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 border border-border/50">
+                    <plan.icon className="w-8 h-8 text-primary" />
                   </div>
                 </div>
 
                 {/* Plan Name */}
-                <GlassCardTitle className="text-2xl font-bold mb-2">
+                <GlassCardTitle className="text-2xl font-bold mb-4 text-foreground">
                   {plan.name}
                 </GlassCardTitle>
 
                 {/* Price */}
-                <div className="mb-4">
-                  <span className="text-4xl font-bold text-foreground">
+                <div className="mb-6">
+                  <span className="text-5xl font-bold text-foreground">
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground">
+                  <span className="text-muted-foreground text-lg ml-1">
                     {plan.period}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-body-base">
                   {plan.description}
                 </p>
               </GlassCardHeader>
 
-              <GlassCardContent className="space-y-6">
+              <GlassCardContent className="space-y-8">
                 {/* Features List */}
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3">
+                    <li key={featureIndex} className="flex items-center gap-4">
                       <div className="flex-shrink-0">
                         <Check className="w-5 h-5 text-accent" />
                       </div>
-                      <span className="text-sm text-foreground">{feature}</span>
+                      <span className="text-body-base text-foreground">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -158,7 +158,7 @@ export const PricingSection = () => {
                 </GlassButton>
 
                 {/* Additional Info */}
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-sm text-muted-foreground text-center">
                   {plan.name === "Enterprise" ? "Custom pricing available" : "No credit card required"}
                 </p>
               </GlassCardContent>

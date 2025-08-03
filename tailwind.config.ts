@@ -76,8 +76,16 @@ export default {
 				'display': ['Inter', 'system-ui', 'sans-serif'],
 				'body': ['Inter', 'system-ui', 'sans-serif'],
 			},
+			fontSize: {
+				'heading-xl': ['4rem', { lineHeight: '1.1', fontWeight: '700' }], // 64px
+				'heading-lg': ['3rem', { lineHeight: '1.15', fontWeight: '700' }], // 48px
+				'heading-md': ['2.5rem', { lineHeight: '1.2', fontWeight: '700' }], // 40px
+				'body-lg': ['1.125rem', { lineHeight: '1.6', fontWeight: '400' }], // 18px
+				'body-base': ['1rem', { lineHeight: '1.6', fontWeight: '400' }], // 16px
+			},
 			backgroundImage: {
 				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-cta': 'var(--gradient-cta)',
 				'gradient-card': 'var(--gradient-card)',
 				'gradient-glow': 'var(--gradient-glow)',
 				'gradient-mesh': 'var(--gradient-mesh)',

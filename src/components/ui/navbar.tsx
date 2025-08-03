@@ -15,51 +15,51 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
       <nav
         ref={ref}
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50 transition-all duration-300 backdrop-blur-xl",
           className
         )}
         {...props}
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
               <span className="text-2xl font-bold gradient-text">
                 ADmyBRAND
               </span>
-              <span className="text-sm text-muted-foreground ml-2">AI Suite</span>
+              <span className="text-sm text-muted-foreground ml-2 font-medium">AI Suite</span>
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
-                <a href="#features" className="text-foreground hover:text-primary transition-colors duration-300">
+            <div className="hidden lg:block">
+              <div className="ml-10 flex items-baseline space-x-12">
+                <a href="#features" className="text-body-base text-foreground hover:text-primary transition-colors duration-200 font-medium">
                   Features
                 </a>
-                <a href="#pricing" className="text-foreground hover:text-primary transition-colors duration-300">
+                <a href="#pricing" className="text-body-base text-foreground hover:text-primary transition-colors duration-200 font-medium">
                   Pricing
                 </a>
-                <a href="#testimonials" className="text-foreground hover:text-primary transition-colors duration-300">
+                <a href="#testimonials" className="text-body-base text-foreground hover:text-primary transition-colors duration-200 font-medium">
                   Reviews
                 </a>
-                <a href="#faq" className="text-foreground hover:text-primary transition-colors duration-300">
+                <a href="#faq" className="text-body-base text-foreground hover:text-primary transition-colors duration-200 font-medium">
                   FAQ
                 </a>
               </div>
             </div>
 
             {/* Desktop CTA Buttons */}
-            <div className="hidden md:flex items-center space-x-4">
-              <GlassButton variant="ghost">
+            <div className="hidden lg:flex items-center space-x-6">
+              <GlassButton variant="ghost" className="text-body-base">
                 Sign In
               </GlassButton>
-              <GlassButton variant="primary">
+              <GlassButton variant="primary" className="text-body-base">
                 Start Free Trial
               </GlassButton>
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <GlassButton
                 variant="ghost"
                 size="icon"
