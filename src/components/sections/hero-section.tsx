@@ -125,15 +125,15 @@ export const HeroSection = () => {
                 className="w-full h-auto rounded-xl sm:rounded-2xl shadow-elegant animate-float"
               />
               
-              {/* Floating Cards - Hidden on mobile for better UX */}
-              <GlassCard variant="glow" padding="sm" className="absolute -top-2 sm:-top-4 -left-2 sm:-left-4 animate-float shadow-glow hidden sm:block z-10">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+              {/* Floating Cards - Now visible on mobile with adjusted positioning */}
+              <GlassCard variant="glow" padding="sm" className="absolute -top-1 sm:-top-4 -left-1 sm:-left-4 animate-float shadow-glow z-10">
+                <div className="flex items-center gap-1 sm:gap-3">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse" />
                   <span className="text-xs sm:text-sm font-bold text-foreground">Live Data</span>
                 </div>
               </GlassCard>
               
-              <GlassCard variant="glow" padding="sm" className="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 animate-float shadow-glow hidden sm:block z-10" style={{animationDelay: "1s"}}>
+              <GlassCard variant="glow" padding="sm" className="absolute -bottom-1 sm:-bottom-4 -right-1 sm:-right-4 animate-float shadow-glow z-10" style={{animationDelay: "1s"}}>
                 <div className="text-center">
                   <div className="text-xs sm:text-sm font-bold text-accent">+247%</div>
                   <div className="text-xs text-foreground/70">ROI Increase</div>

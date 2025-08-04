@@ -73,45 +73,65 @@ const Navbar = React.forwardRef<HTMLElement, NavbarProps>(
             </div>
           </div>
 
-          {/* Mobile Navigation */}
+          {/* Mobile Navigation - Enhanced with brighter background and better visibility */}
           {isOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 z-[200]">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 glass-card mt-2 rounded-xl mx-4">
-                <a
-                  href="#features"
-                  className="block px-3 py-3 text-sm text-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Features
-                </a>
-                <a
-                  href="#pricing"
-                  className="block px-3 py-3 text-sm text-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Pricing
-                </a>
-                <a
-                  href="#testimonials"
-                  className="block px-3 py-3 text-sm text-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Reviews
-                </a>
-                <a
-                  href="#faq"
-                  className="block px-3 py-3 text-sm text-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  FAQ
-                </a>
-                <div className="flex flex-col space-y-3 pt-4">
-                  <GlassButton variant="ghost" size="sm" className="w-full">
-                    Sign In
-                  </GlassButton>
-                  <GlassButton variant="primary" size="sm" className="w-full">
-                    Start Free Trial
-                  </GlassButton>
+              {/* Backdrop for better contrast */}
+              <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+              
+              {/* Menu container with enhanced glassmorphism */}
+              <div className="relative px-2 pt-2 pb-3 space-y-1 sm:px-3 mx-4 mt-2 rounded-xl overflow-hidden">
+                {/* Enhanced glassmorphism background with brighter appearance */}
+                <div className="absolute inset-0 bg-white/95 backdrop-blur-xl border border-white/30 rounded-xl shadow-elegant" />
+                
+                {/* Menu items with proper contrast */}
+                <div className="relative z-10 space-y-1">
+                  <a
+                    href="#features"
+                    className="block px-3 py-3 text-sm font-semibold text-foreground hover:text-primary hover:bg-white/20 rounded-lg transition-all duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Features
+                  </a>
+                  <a
+                    href="#pricing"
+                    className="block px-3 py-3 text-sm font-semibold text-foreground hover:text-primary hover:bg-white/20 rounded-lg transition-all duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Pricing
+                  </a>
+                  <a
+                    href="#testimonials"
+                    className="block px-3 py-3 text-sm font-semibold text-foreground hover:text-primary hover:bg-white/20 rounded-lg transition-all duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Reviews
+                  </a>
+                  <a
+                    href="#faq"
+                    className="block px-3 py-3 text-sm font-semibold text-foreground hover:text-primary hover:bg-white/20 rounded-lg transition-all duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    FAQ
+                  </a>
+                  
+                  {/* CTA buttons with better styling */}
+                  <div className="flex flex-col space-y-3 pt-4 border-t border-white/20">
+                    <GlassButton 
+                      variant="ghost" 
+                      size="sm" 
+                      className="w-full justify-center text-sm font-semibold"
+                    >
+                      Sign In
+                    </GlassButton>
+                    <GlassButton 
+                      variant="primary" 
+                      size="sm" 
+                      className="w-full justify-center text-sm font-semibold"
+                    >
+                      Start Free Trial
+                    </GlassButton>
+                  </div>
                 </div>
               </div>
             </div>
