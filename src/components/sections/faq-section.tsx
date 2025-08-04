@@ -41,25 +41,25 @@ const faqs = [
 
 export const FAQSection = () => {
   return (
-    <section id="faq" className="py-24 relative overflow-hidden">
+    <section id="faq" className="py-20 sm:py-24 lg:py-32 relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-accent/10 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 glass-card px-3 sm:px-4 py-2 rounded-full mb-4">
             <HelpCircle className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium">FAQ</span>
+            <span className="text-xs sm:text-sm font-medium">FAQ</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             Frequently Asked
             <span className="gradient-text block">Questions</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground">
+          <p className="text-base sm:text-lg text-foreground/90">
             Find answers to common questions about ADmyBRAND AI Suite. 
             Can't find what you're looking for? Contact our support team.
           </p>
@@ -71,13 +71,13 @@ export const FAQSection = () => {
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="border-border/30">
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-accent/5 transition-colors duration-300">
-                    <span className="text-left font-medium text-foreground">
+                  <AccordionTrigger className="px-4 sm:px-6 py-3 sm:py-4 hover:no-underline hover:bg-accent/5 transition-colors duration-300">
+                    <span className="text-left text-sm sm:text-base font-medium text-foreground">
                       {faq.question}
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4">
-                    <p className="text-muted-foreground leading-relaxed">
+                  <AccordionContent className="px-4 sm:px-6 pb-3 sm:pb-4">
+                    <p className="text-sm sm:text-base text-foreground/85 leading-relaxed">
                       {faq.answer}
                     </p>
                   </AccordionContent>
@@ -88,30 +88,30 @@ export const FAQSection = () => {
         </div>
 
         {/* Contact Support */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12 sm:mt-16">
           <GlassCard variant="glow" className="max-w-2xl mx-auto">
-            <div className="p-8 space-y-6">
+            <div className="p-6 sm:p-8 space-y-4 sm:space-y-6">
               <div className="space-y-2">
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-lg sm:text-xl font-semibold">
                   Still have questions?
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-sm sm:text-base text-foreground/85">
                   Our expert support team is here to help you succeed. 
                   Get personalized assistance and detailed answers to your specific questions.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <GlassButton variant="primary">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <GlassButton variant="primary" size="default">
                   <MessageCircle className="w-4 h-4 mr-2" />
                   Contact Support
                 </GlassButton>
-                <GlassButton variant="secondary">
+                <GlassButton variant="secondary" size="default">
                   Schedule a Demo
                 </GlassButton>
               </div>
 
-              <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs sm:text-sm text-foreground/80">
                 <div>📧 Average response: 2 hours</div>
                 <div>💬 24/7 chat support</div>
                 <div>📞 Phone support (Pro+)</div>

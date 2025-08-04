@@ -1,3 +1,23 @@
+/**
+ * ADmyBRAND AI Suite - Global Styles & Design System
+ * 
+ * This file contains the complete design system for the ADmyBRAND AI Suite landing page.
+ * It includes CSS custom properties, utility classes, animations, and responsive design.
+ * 
+ * Design Philosophy:
+ * - Modern, clean, and professional aesthetic
+ * - Glassmorphism and subtle transparency effects
+ * - Consistent color palette with HSL values
+ * - Smooth animations and micro-interactions
+ * - Mobile-first responsive design
+ * 
+ * Color System:
+ * - Primary: Modern blue for main actions and branding
+ * - Secondary: Elegant purple for accents and highlights
+ * - Accent: Fresh green for success states and CTAs
+ * - Neutral: Clean grays for text and backgrounds
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,44 +28,50 @@ All colors MUST be HSL for perfect design system consistency.
 */
 
 @layer base {
+  /**
+   * CSS Custom Properties (CSS Variables)
+   * 
+   * Defines the complete color palette and design tokens
+   * using HSL values for consistent color manipulation.
+   */
   :root {
     /* Base Colors - Ultra Clean & Minimalist */
-    --background: 0 0% 100%;
-    --foreground: 240 6% 15%;
+    --background: 0 0% 100%;        /* Pure white background */
+    --foreground: 240 6% 15%;       /* Dark gray text */
 
     /* Card System - Pure White */
-    --card: 0 0% 100%;
-    --card-foreground: 240 6% 15%;
+    --card: 0 0% 100%;              /* Card backgrounds */
+    --card-foreground: 240 6% 15%;  /* Card text */
 
     /* Popover & Modal */
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 6% 15%;
+    --popover: 0 0% 100%;           /* Popover backgrounds */
+    --popover-foreground: 240 6% 15%; /* Popover text */
 
     /* Primary Brand - Modern Blue */
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 221 83% 63%;
-    --primary-light: 221 83% 73%;
+    --primary: 221 83% 53%;         /* Main brand color */
+    --primary-foreground: 0 0% 100%; /* Text on primary */
+    --primary-glow: 221 83% 63%;    /* Lighter for glow effects */
+    --primary-light: 221 83% 73%;   /* Even lighter variant */
 
     /* Secondary - Elegant Purple */
-    --secondary: 262 83% 58%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 262 83% 68%;
+    --secondary: 262 83% 58%;       /* Secondary brand color */
+    --secondary-foreground: 0 0% 100%; /* Text on secondary */
+    --secondary-light: 262 83% 68%; /* Lighter variant */
 
     /* Accent - Fresh Green */
-    --accent: 142 71% 45%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 142 71% 55%;
+    --accent: 142 71% 45%;          /* Success and accent color */
+    --accent-foreground: 0 0% 100%; /* Text on accent */
+    --accent-light: 142 71% 55%;    /* Lighter variant */
 
     /* Muted Tones - Light Neutral */
-    --muted: 210 11% 96%;
-    --muted-foreground: 240 5% 64%;
+    --muted: 210 11% 96%;           /* Muted backgrounds */
+    --muted-foreground: 240 5% 64%; /* Muted text */
 
     /* Glass Effects - Modern Transparency */
-    --glass-primary: 248 95% 15% / 0.05;
-    --glass-secondary: 264 85% 20% / 0.05;
-    --glass-white: 0 0% 100% / 0.1;
-    --glass-dark: 240 10% 9% / 0.05;
+    --glass-primary: 248 95% 15% / 0.05;   /* Primary glass overlay */
+    --glass-secondary: 264 85% 20% / 0.05; /* Secondary glass overlay */
+    --glass-white: 0 0% 100% / 0.1;        /* White glass overlay */
+    --glass-dark: 240 10% 9% / 0.05;       /* Dark glass overlay */
 
     /* Gradients - Subtle Modern Effects */
     --gradient-hero: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(262 83% 58%) 100%);
@@ -53,40 +79,44 @@ All colors MUST be HSL for perfect design system consistency.
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8) 0%, hsl(210 11% 96% / 0.3) 100%);
     --gradient-glow: radial-gradient(circle at 50% 50%, hsl(221 83% 53% / 0.05) 0%, transparent 70%);
     --gradient-mesh: radial-gradient(circle at 20% 80%, hsl(221 83% 53% / 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(262 83% 58% / 0.03) 0%, transparent 50%);
+    --gradient-animated: linear-gradient(-45deg, hsl(221 83% 53%), hsl(262 83% 58%), hsl(142 71% 45%), hsl(221 83% 53%));
+    --gradient-shimmer: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.2), transparent);
 
     /* Shadows - Soft & Minimal */
-    --shadow-glass: 0 4px 24px 0 hsl(240 6% 15% / 0.04);
-    --shadow-card: 0 2px 12px -2px hsl(240 6% 15% / 0.08);
-    --shadow-glow: 0 8px 32px -8px hsl(221 83% 53% / 0.2);
-    --shadow-elegant: 0 12px 40px -12px hsl(240 6% 15% / 0.12);
+    --shadow-glass: 0 4px 24px 0 hsl(240 6% 15% / 0.04);     /* Glass effect shadow */
+    --shadow-card: 0 2px 12px -2px hsl(240 6% 15% / 0.08);   /* Card shadow */
+    --shadow-glow: 0 8px 32px -8px hsl(221 83% 53% / 0.2);   /* Glow effect shadow */
+    --shadow-elegant: 0 12px 40px -12px hsl(240 6% 15% / 0.12); /* Elegant shadow */
 
     /* Interactive States */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;   /* Error/delete color */
+    --destructive-foreground: 210 40% 98%; /* Text on destructive */
 
-    --border: 240 6% 90%;
-    --input: 240 6% 94%;
-    --ring: 248 95% 15%;
+    /* Form Elements */
+    --border: 240 6% 90%;           /* Border color */
+    --input: 240 6% 94%;            /* Input background */
+    --ring: 248 95% 15%;            /* Focus ring color */
 
-    --radius: 0.5rem;
+    /* Border Radius */
+    --radius: 0.5rem;               /* Default border radius */
 
+    /* Sidebar Colors (for future use) */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /**
+   * Dark Mode Color Scheme
+   * 
+   * Provides alternative colors for dark theme support.
+   * Currently not implemented but ready for future use.
+   */
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
@@ -97,8 +127,8 @@ All colors MUST be HSL for perfect design system consistency.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -114,53 +144,82 @@ All colors MUST be HSL for perfect design system consistency.
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 224.3 76.3% 94.1%;
   }
 }
 
 @layer base {
+  /**
+   * Global Reset and Base Styles
+   * 
+   * Ensures consistent styling across all browsers
+   * and provides smooth scrolling behavior.
+   */
   * {
     @apply border-border;
   }
 
+  /**
+   * Body Styles
+   * 
+   * Sets up the main document with proper background,
+   * text color, and smooth scrolling.
+   */
   body {
     @apply bg-background text-foreground;
-    background: var(--gradient-mesh);
-    background-attachment: fixed;
-    font-family: 'Inter', system-ui, sans-serif;
-    line-height: 1.6;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
   }
+}
 
-  /* Glass morphism utilities */
+@layer components {
+  /**
+   * Glass Effect Utility Classes
+   * 
+   * Provides reusable glassmorphism effects
+   * with backdrop blur and transparency.
+   */
+
+  /* Basic glass effect with backdrop blur */
   .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
   }
 
+  /* Enhanced glass card effect with shadows */
   .glass-card {
-    background: var(--gradient-card);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--border));
-    box-shadow: var(--shadow-glass);
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 shadow-glass;
   }
 
+  /**
+   * Gradient Text Effect
+   * 
+   * Applies gradient background to text
+   * with proper fallback for older browsers.
+   */
   .gradient-text {
-    background: var(--gradient-hero);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
 
-  /* Smooth animations */
+  /**
+   * Section Styling
+   * 
+   * Ensures proper spacing and layout
+   * for all section elements.
+   */
+  section {
+    @apply relative overflow-hidden;
+  }
+}
+
+@layer utilities {
+  /**
+   * Animation Utilities
+   * 
+   * Custom keyframe animations for enhanced
+   * user experience and visual appeal.
+   */
+
+  /* Floating animation for subtle movement */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -170,42 +229,69 @@ All colors MUST be HSL for perfect design system consistency.
     50% { transform: translateY(-20px); }
   }
 
+  /* Glow animation for special elements */
   .animate-glow {
-    animation: glow 3s ease-in-out infinite alternate;
+    animation: glow 2s ease-in-out infinite alternate;
   }
 
   @keyframes glow {
-    from { box-shadow: var(--shadow-card); }
-    to { box-shadow: var(--shadow-glow); }
+    from { box-shadow: 0 0 20px hsl(221 83% 53% / 0.3); }
+    to { box-shadow: 0 0 30px hsl(221 83% 53% / 0.5); }
   }
 
-  /* Scroll animations */
+  /* Animated gradient background */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Shimmer effect for buttons and cards */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  /* Animated gradient background class */
+  .animated-gradient {
+    background: var(--gradient-animated);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* Shimmer animation class */
+  .animate-shimmer {
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  /* Scroll-triggered animation utilities */
   .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    @apply opacity-0 translate-y-10 transition-all duration-1000;
   }
 
   .animate-on-scroll.in-view {
-    opacity: 1;
-    transform: translateY(0);
+    @apply opacity-100 translate-y-0;
   }
+}
 
-  /* Modern scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
+/**
+ * Custom Scrollbar Styling
+ * 
+ * Provides a modern, minimal scrollbar design
+ * that matches the overall aesthetic.
+ */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
 
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 3px;
-  }
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-light));
-  }
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
 }
