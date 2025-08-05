@@ -2,11 +2,9 @@
 
 A stunning, modern SaaS landing page built with React, TypeScript, and Tailwind CSS. Features glassmorphism design, smooth animations, and a professional aesthetic inspired by top-tier SaaS companies like Notion, Vercel, and Linear.
 
-![ADmyBRAND AI Suite Preview](https://via.placeholder.com/800x400/3B82F6/FFFFFF?text=ADmyBRAND+AI+Suite)
-
 ## 🚀 Live Demo
 
-**[View Live Demo](https://your-vercel-deployment-url.vercel.app)**
+**[View Live Demo](admybrand-coow7wjgy-naresh-manikeris-projects.vercel.app)**
 
 ## ✨ Features
 
