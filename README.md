@@ -8,7 +8,7 @@ A stunning, modern SaaS landing page built with React, TypeScript, and Tailwind 
 
 ## ✨ Features
 
-### 🎨 **Design & UI/UX**
+## 🎨 **Design & UI/UX**
 - **Glassmorphism Design** - Modern glass effects with backdrop blur
 - **2025 Design Trends** - Cutting-edge visual elements and animations
 - **Responsive Design** - Flawless experience on all devices
